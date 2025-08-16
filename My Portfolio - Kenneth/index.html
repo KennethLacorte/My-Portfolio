@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Kenneth Lacorte - Software Developer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS when the script loads
+            emailjs.init("y0v7q3t4IHyrar8hO");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>JKL</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm John Kenneth D. Lacorte</span></h1>
+                <h2 class="hero-subtitle">Aspiring Software Developer</h2>
+                <p class="hero-description">
+                    Passionate about creating innovative solutions and turning ideas into reality through code.
+                    I specialize in modern web technologies and software development.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-placeholder">
+                  <img src="JohnKenneth.jpg" alt="John Kenneth Lacorte" class="profile-pic">
+                </div>
+            </div>              
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a passionate and dedicated aspiring software developer with a strong foundation in programming 
+                        and a keen interest in creating innovative digital solutions. My journey in technology has been 
+                        driven by curiosity and a desire to solve real-world problems through code.
+                    </p>
+                    <p>
+                        I believe in continuous learning and staying updated with the latest technologies and best practices 
+                        in software development. My goal is to contribute to meaningful projects that make a positive impact 
+                        on people's lives.
+                    </p>
+                    <div class="skills">
+                        <h3>Technical Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Programming Languages</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">JavaScript</span>
+                                    <span class="skill-tag">Python</span>
+                                    <span class="skill-tag">Java</span>
+                                    <span class="skill-tag">C++</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Web Technologies</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">HTML5</span>
+                                    <span class="skill-tag">CSS3</span>
+                                    <span class="skill-tag">React</span>
+                                    <span class="skill-tag">Node.js</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Tools & Technologies</h4>
+                                <div class="skill-tags">
+                                    <span class="skill-tag">Git</span>
+                                    <span class="skill-tag">VS Code</span>
+                                    <span class="skill-tag">Figma</span>
+                                    <span class="skill-tag">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>A full-stack e-commerce application built with React and Node.js, featuring user authentication, 
+                           product management, and payment integration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Task Management App</h3>
+                        <p>A responsive task management application with drag-and-drop functionality, real-time updates, 
+                           and team collaboration features.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Visualization Dashboard</h3>
+                        <p>An interactive dashboard for data visualization using D3.js, featuring charts, graphs, 
+                           and real-time data updates.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">D3.js</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Chatbot</h3>
+                        <p>A conversational AI chatbot built with Python and natural language processing, 
+                           capable of understanding and responding to user queries.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">TensorFlow</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Software Development Intern</h3>
+                            <span class="timeline-date">February 2025 - May 2025</span>
+                        </div>
+                        <h4>LaQuest Philippines Inc.</h4>
+                        <ul>
+                            <li>Developed and maintained desktop application using VB.net and C#</li>
+                            <li>Collaborated with senior developers and quality assurance team on fixing bugs and issues on Barangay Information System</li>
+                            <li>Wrote and optimized stored procedures in DBForge for data integrity</li>
+                            <li>Developed and executed SQL queries using MS SQL Server to supportdata retrieval, validation, and report generation.</li>
+                            <li>Participated in code reviews and contributed to team documentation</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Google Cloud Practitioner Intern</h3>
+                            <span class="timeline-date">February 2025 - May 2025</span>
+                        </div>
+                        <h4>LaQuest Philippines Inc.</h4>
+                        <ul>
+                            <li>Attended hands-on training on Google Cloud Platform (GCP) at theGoogle Office, focusing on foundational cloud services, infrastructure,and pricing models</li>
+                            <li>Contributed to system architecture planning with cost estimation usingGoogle Cloud Pricing Calculator.</li>
+                            <li>Completed several Google Cloud Credentials Certifications.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates & Achievements</h2>
+            <div class="certificates-grid">
+                
+                <div class="certificate-card" onclick="openCertificate('Certificates/Great Hackathon Certificate.png')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-microchip"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Technolympics: The Great Hackathon</h3>
+                        <p>Certificate of Participation</p>
+                        <span class="certificate-date">April 2023</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/Advance Database Management System Completion.png')">
+                    <div class="certificate-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Advance Database Management System</h3>
+                        <p>Certificate of Participation</p>
+                        <span class="certificate-date">May 2023</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/Inside Out.jpg')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-microchip"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Inside Out: Pioneering a Fresh Chapter</h3>
+                        <p>Certificate of Participation</p>
+                        <span class="certificate-date">September 2023</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/TechSynergy 3RD YR Certificate.jpg')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-microchip"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>TechSynergy: Navigating the Digital Landscape 2023 - Connecting Concepts, Bridging Technologies</h3>
+                        <p>Certificate of Participation</p>
+                        <span class="certificate-date">December 2023</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/Techno SDG Exposition Certificate.jpg')">
+                    <div class="certificate-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Techno SDG Exposition: Bridging Insights and Innovation</h3>
+                        <p>Certificate of Participation</p>
+                        <span class="certificate-date">February 2024</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/Navigating the Future of Technology.jpg')">
+                    <div class="certificate-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Navigating the Future of Technology: Integration, Innovation and Security</h3>
+                        <p>Certificate of Participation</p>
+                        <span class="certificate-date">April 2024</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/ChromeOS for enterprise-Deployment Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>ChromeOS for enterprise-Deployment Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/ChromeOS for enterprise-Sales Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>ChromeOS for enterprise-Sales Credential </h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Cloud Sales Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Cloud Sales Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Cloud SecOps Sales Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Cloud SecOps Sales Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Cloud SecOps Technical Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Cloud SecOps Technical Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google for Education Deployment Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google for Education Deployment Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google for Education Sales Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google for Education Sales Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Maps Platform Sales Fundamentals Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Maps Platform Sales FundamentalsCredential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Maps Platform Technical Fundamentals Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Maps Platform Technical Fundamentals Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Workspace Deployment Services Credential - John Kenneth Lacorte.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Workspace Deployment Services Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+                <div class="certificate-card" onclick="openCertificate('Certificates/Google Workspace Sales Credential.pdf')">
+                    <div class="certificate-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="certificate-content">
+                        <h3>Google Workspace Sales Credential</h3>
+                        <p>Google Cloud Platform</p>
+                        <span class="certificate-date">March 2025</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities and exciting projects. 
+                       Feel free to reach out if you'd like to collaborate or just simply message me!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>johnkennethlacortee@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+639157314082</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Philippines</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://github.com/KennethLacorte" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/john-kenneth-lacorte" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/lacortejohnkenneth/" target="_blank" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/jklacorte/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Sending...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 John Kenneth Lacorte. All rights reserved.</p>
+                <p>Developed by John Kenneth Lacorte</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

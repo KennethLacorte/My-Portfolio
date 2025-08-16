@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Configuration Test</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EmailJS Template Configuration Test</h1>
+        <p>This test will help identify which template is being sent and to which email address.</p>
+        
+        <div class="test-section">
+            <h3>Test 1: Auto-Reply Template (template_rsf8awb)</h3>
+            <p>This should send an auto-reply to the sender's email.</p>
+            <button onclick="testAutoReply()">Test Auto-Reply Template</button>
+            <div id="autoReplyStatus" class="status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>Test 2: Notification Template (template_xtx41fw)</h3>
+            <p>This should send a notification to your email (johnkennethlacortee@gmail.com).</p>
+            <button onclick="testNotification()">Test Notification Template</button>
+            <div id="notificationStatus" class="status"></div>
+        </div>
+
+        <div class="test-section">
+            <h3>Configuration Check</h3>
+            <div class="info status" style="display: block;">
+                <strong>Current Setup:</strong><br>
+                • Public Key: y0v7q3t4IHyrar8hO<br>
+                • Service ID: jk_lacorte<br>
+                • Auto-Reply Template: template_rsf8awb<br>
+                • Notification Template: template_xtx41fw<br>
+                • Your Email: johnkennethlacortee@gmail.com
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>Expected Results:</h3>
+            <ul>
+                <li><strong>Auto-Reply Test:</strong> Should send to test@example.com (sender's email)</li>
+                <li><strong>Notification Test:</strong> Should send to johnkennethlacortee@gmail.com (your email)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        emailjs.init("y0v7q3t4IHyrar8hO");
+        console.log('EmailJS initialized for template testing');
+
+        function showStatus(elementId, message, type) {
+            const status = document.getElementById(elementId);
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+            
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 15000);
+        }
+
+        function testAutoReply() {
+            console.log('Testing auto-reply template...');
+            
+            const autoReplyParams = {
+                name: 'Test User',
+                title: 'Test Message',
+                email: 'test@example.com',
+                message: 'This is a test message.',
+                date: new Date().toLocaleDateString()
+            };
+            
+            console.log('Auto-reply params:', autoReplyParams);
+            
+            emailjs.send('jk_lacorte', 'template_rsf8awb', autoReplyParams)
+                .then(function(response) {
+                    console.log('Auto-reply SUCCESS!', response.status, response.text);
+                    showStatus('autoReplyStatus', 'Auto-reply sent successfully! Check test@example.com inbox.', 'success');
+                }, function(error) {
+                    console.error('Auto-reply FAILED...', error);
+                    showStatus('autoReplyStatus', `Auto-reply failed: ${error.text || error.message}`, 'error');
+                });
+        }
+
+        function testNotification() {
+            console.log('Testing notification template...');
+            
+            const notificationParams = {
+                from_name: 'Test User',
+                from_email: 'test@example.com',
+                subject: 'Test Message',
+                message: 'This is a test message to verify the notification template.',
+                to_name: 'John Kenneth Lacorte',
+                date: new Date().toLocaleDateString()
+            };
+            
+            console.log('Notification params:', notificationParams);
+            
+            emailjs.send('jk_lacorte', 'template_xtx41fw', notificationParams)
+                .then(function(response) {
+                    console.log('Notification SUCCESS!', response.status, response.text);
+                    showStatus('notificationStatus', 'Notification sent successfully! Check johnkennethlacortee@gmail.com inbox.', 'success');
+                }, function(error) {
+                    console.error('Notification FAILED...', error);
+                    showStatus('notificationStatus', `Notification failed: ${error.text || error.message}`, 'error');
+                });
+        }
+    </script>
+</body>
+</html>
