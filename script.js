@@ -473,3 +473,193 @@ loadingStyles.textContent = `
 `;
 
 document.head.appendChild(loadingStyles);
+
+
+// SnapNotes Modal Functions
+function openSnapNotesModal() {
+    const modal = document.getElementById('SnapNotesModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        
+        // Focus on modal for accessibility
+        modal.focus();
+        
+        // Add event listener for escape key
+        document.addEventListener('keydown', handleSnapNotesEscapeKey);
+    }
+}
+
+function closeSnapNotesModal() {
+    const modal = document.getElementById('SnapNotesModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+        
+        // Remove event listener
+        document.removeEventListener('keydown', handleSnapNotesEscapeKey);
+    }
+}
+
+function handleSnapNotesEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeSnapNotesModal();
+    }
+}
+
+// Michelle's Burger Ordering System Modal Functions
+function openBurgerModal() {
+    const modal = document.getElementById('burgerModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        modal.focus();
+        document.addEventListener('keydown', handleBurgerEscapeKey);
+    }
+}
+
+function closeBurgerModal() {
+    const modal = document.getElementById('burgerModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleBurgerEscapeKey);
+    }
+}
+
+function handleBurgerEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeBurgerModal();
+    }
+}
+
+// AXYZ Backyard Gym Modal Functions
+function openGymModal() {
+    const modal = document.getElementById('gymModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        modal.focus();
+        document.addEventListener('keydown', handleGymEscapeKey);
+    }
+}
+
+function closeGymModal() {
+    const modal = document.getElementById('gymModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleGymEscapeKey);
+    }
+}
+
+function handleGymEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeGymModal();
+    }
+}
+
+// Green Genius Modal Functions
+function openGreenGeniusModal() {
+    const modal = document.getElementById('greenGeniusModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        modal.focus();
+        document.addEventListener('keydown', handleGreenGeniusEscapeKey);
+    }
+}
+
+function closeGreenGeniusModal() {
+    const modal = document.getElementById('greenGeniusModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleGreenGeniusEscapeKey);
+    }
+}
+
+function handleGreenGeniusEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeGreenGeniusModal();
+    }
+}
+
+// Green Genius Application Modal Functions
+function openGreenGeniusAppModal() {
+    const modal = document.getElementById('greenGeniusAppModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        modal.focus();
+        document.addEventListener('keydown', handleGreenGeniusAppEscapeKey);
+    }
+}
+
+function closeGreenGeniusAppModal() {
+    const modal = document.getElementById('greenGeniusAppModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.removeEventListener('keydown', handleGreenGeniusAppEscapeKey);
+    }
+}
+
+function handleGreenGeniusAppEscapeKey(e) {
+    if (e.key === 'Escape') {
+        closeGreenGeniusAppModal();
+    }
+}
+
+// Close modals when clicking outside of them
+document.addEventListener('DOMContentLoaded', function() {
+    // SnapNotes Modal
+    const snapNotesModal = document.getElementById('SnapNotesModal');
+    if (snapNotesModal) {
+        snapNotesModal.addEventListener('click', function(e) {
+            if (e.target === snapNotesModal) {
+                closeSnapNotesModal();
+            }
+        });
+    }
+    
+    // Burger Modal
+    const burgerModal = document.getElementById('burgerModal');
+    if (burgerModal) {
+        burgerModal.addEventListener('click', function(e) {
+            if (e.target === burgerModal) {
+                closeBurgerModal();
+            }
+        });
+    }
+    
+    // Gym Modal
+    const gymModal = document.getElementById('gymModal');
+    if (gymModal) {
+        gymModal.addEventListener('click', function(e) {
+            if (e.target === gymModal) {
+                closeGymModal();
+            }
+        });
+    }
+    
+    // Green Genius Modal
+    const greenGeniusModal = document.getElementById('greenGeniusModal');
+    if (greenGeniusModal) {
+        greenGeniusModal.addEventListener('click', function(e) {
+            if (e.target === greenGeniusModal) {
+                closeGreenGeniusModal();
+            }
+        });
+    }
+    
+    // Green Genius App Modal
+    const greenGeniusAppModal = document.getElementById('greenGeniusAppModal');
+    if (greenGeniusAppModal) {
+        greenGeniusAppModal.addEventListener('click', function(e) {
+            if (e.target === greenGeniusAppModal) {
+                closeGreenGeniusAppModal();
+            }
+        });
+    }
+});

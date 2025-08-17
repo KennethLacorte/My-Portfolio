@@ -161,29 +161,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/Turonnie/CAPSTONE" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>BatStateU NEU Lipa Student Organizations Tracking System</h3>
-                        <p>An Agile Methodology- driven project aimed at automating and optimizing the event approval processes for student organizations 
-                            within Batangas State University's National Engineering University Lipa Campus. replaces the manual, paper-based procedures with a digital solution, offering efficiency, 
-                            transparency, and a streamlined experience for both student organizations and administrators.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/super-smile/SIA--Final-Project" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
+                            <a href="#" class="project-link demo-link" onclick="openGymModal()"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
@@ -204,7 +182,7 @@
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/KennethLacorte/WebSystemAndTechnologies-" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live</a>
+                            <a href="#" class="project-link demo-link" onclick="openBurgerModal()"><i class="fas fa-external-link-alt"></i> Demo</a>
                         </div>
                     </div>
                 </div>
@@ -224,7 +202,7 @@
                         </div>
                         <div class="project-links">
                             <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="#" class="project-link demo-link" onclick="openSnapNotesModal()"><i class="fas fa-external-link-alt"></i> Demo </a>
                         </div>
                     </div>
                     
@@ -245,8 +223,8 @@
                             <span class="tech-tag">Android SDK</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://drive.google.com/file/d/1nxgfp2yz-ZGOAjWDh-t59IQgkt9bO69V/view?usp=sharing" class="project-link"><i class="fab fa-android"></i> Application</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo </a>
+                            <a href="#" class="project-link" onclick="openGreenGeniusAppModal()"><i class="fab fa-android"></i> Application</a>
+                            <a href="#" class="project-link demo-link" onclick="openGreenGeniusModal()"><i class="fas fa-external-link-alt"></i> Demo </a>
                         </div>
                     </div>
                 </div>
@@ -560,6 +538,135 @@
             </div>
         </div>
     </footer>
+
+
+    <!--SnapNotes Modal -->
+    <div id="SnapNotesModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSnapNotesModal()">&times;</span>
+            <h2>SnapNotes Demo</h2>
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/gy4TC_yAmJ8?si=nIwiGJf4pORi5eyH"           
+                    title="SnapNotes Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="modal-description">
+                Watch the demo of SnapNotes – a smart note-taking app that lets you quickly create, organize, and manage notes with optional snapshots for a more visual and convenient way to remember important ideas.
+            </p>
+        </div>
+    </div>
+    <!-- Green Genius Modal -->
+    <div id="greenGeniusModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGreenGeniusModal()">&times;</span>
+            <h2>Green Genius Demo</h2>
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/xsmVtMzpw3k" 
+                    title="Green Genius Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="modal-description">
+                Watch the demo of Green Genius - an eco-friendly lifestyle app that uses cutting-edge environmental science and technology to help users live more sustainably.
+            </p>
+        </div>
+    </div>
+
+    <!-- Michelle's Burger Ordering System Modal -->
+    <div id="burgerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBurgerModal()">&times;</span>
+            <h2>Michelle's Burger Ordering System Demo</h2>
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/Aian2JVJHB8?si=cbQbHGIKlr2qtgTG" 
+                    title="Michelle's Burger Ordering System Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="modal-description">
+                Watch the demo of Michelle's Burger Ordering System - a simple yet efficient application developed to help a burger shop streamline its ordering process.
+            </p>
+        </div>
+    </div>
+
+    <!-- AXYZ Backyard Gym Modal -->
+    <div id="gymModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGymModal()">&times;</span>
+            <h2>AXYZ Backyard Gym Demo</h2>
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/C-68XIP2Yfk?si=b9CyEumymPMONYgy" 
+                    title="AXYZ Backyard Gym Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p class="modal-description">
+                Watch the demo of AXYZ Backyard Gym - a data-driven gym management system that uses machine learning to enhance operational efficiency and improve member experience.
+            </p>
+        </div>
+    </div>
+
+    <!-- Green Genius Application Modal -->
+    <div id="greenGeniusAppModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGreenGeniusAppModal()">&times;</span>
+            <h2>Green Genius Application</h2>
+            <div class="app-download-container">
+                <div class="app-icon">
+                    <i class="fab fa-android"></i>
+                </div>
+                <h3>Green Genius APK Download</h3>
+                <p class="app-description">
+                    Green Genius is an eco-friendly lifestyle app that uses cutting-edge environmental science and technology to help users live more sustainably.
+                </p>
+                <div class="download-info">
+                    <p><strong>Features:</strong></p>
+                    <ul>
+                        <li>Personalized eco-friendly recommendations</li>
+                        <li>Educational resources on sustainability</li>
+                        <li>Environmental impact information</li>
+                        <li>Daily habit guide</li>
+                    </ul>
+                </div>
+                <div class="gdrive-link-container">
+                    <p class="gdrive-label"><strong>Google Drive Link:</strong></p>
+                    <div class="gdrive-link-box">
+                        <a href="https://drive.google.com/file/d/1nxgfp2yz-ZGOAjWDh-t59IQgkt9bO69V/view?usp=sharing" 
+                           target="_blank" 
+                           class="gdrive-link">
+                            <i class="fab fa-google-drive"></i>
+                            https://drive.google.com/file/d/1nxgfp2yz-ZGOAjWDh-t59IQgkt9bO69V/view?usp=sharing
+                        </a>
+                    </div>
+                    <p class="download-note">
+                        <i class="fas fa-info-circle"></i> 
+                        Click the link above to open Google Drive in a new tab, then download the APK file.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
