@@ -122,6 +122,42 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+}
+
+/* Typing animation cursor effect */
+.hero-title::after {
+    content: '|';
+    position: absolute;
+    right: -8px;
+    animation: blink 1s infinite;
+    color: #3b82f6;
+    font-weight: 300;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Hide cursor when typing animation is complete */
+.hero-title.typing-complete::after {
+    display: none;
+}
+
+/* Fade in animation for hero title */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .highlight {
@@ -843,6 +879,9 @@ section {
     animation: fadeIn 0.3s ease;
     overflow-y: auto;
     padding: 20px;
+}
+
+.modal.show {
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -965,6 +1004,11 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Ensure modal content is properly positioned */
+.modal.show .modal-content {
+    animation: slideIn 0.3s ease;
 }
 
 /* Responsive modal */

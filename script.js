@@ -246,9 +246,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const originalText = heroTitle.innerHTML;
+        console.log('Starting typing animation for:', originalText);
         setTimeout(() => {
             typeWriter(heroTitle, originalText, 50);
-        }, 500);
+        }, 1000); // Increased delay to ensure page is fully loaded
+    } else {
+        console.log('Hero title not found');
     }
     
     // Skills animation on scroll
@@ -351,12 +354,17 @@ function showNotification(message, type = 'info') {
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
+    console.log('TypeWriter started with text:', text);
     
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
             i++;
             setTimeout(type, speed);
+        } else {
+            // Animation complete, add class to hide cursor
+            element.classList.add('typing-complete');
+            console.log('Typing animation completed');
         }
     }
     
@@ -479,7 +487,7 @@ document.head.appendChild(loadingStyles);
 function openSnapNotesModal() {
     const modal = document.getElementById('SnapNotesModal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
         
         // Focus on modal for accessibility
@@ -493,7 +501,7 @@ function openSnapNotesModal() {
 function closeSnapNotesModal() {
     const modal = document.getElementById('SnapNotesModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         document.body.style.overflow = 'auto'; // Restore scrolling
         
         // Remove event listener
@@ -511,7 +519,7 @@ function handleSnapNotesEscapeKey(e) {
 function openBurgerModal() {
     const modal = document.getElementById('burgerModal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
         modal.focus();
         document.addEventListener('keydown', handleBurgerEscapeKey);
@@ -521,7 +529,7 @@ function openBurgerModal() {
 function closeBurgerModal() {
     const modal = document.getElementById('burgerModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         document.body.style.overflow = 'auto';
         document.removeEventListener('keydown', handleBurgerEscapeKey);
     }
@@ -537,7 +545,7 @@ function handleBurgerEscapeKey(e) {
 function openGymModal() {
     const modal = document.getElementById('gymModal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
         modal.focus();
         document.addEventListener('keydown', handleGymEscapeKey);
@@ -547,7 +555,7 @@ function openGymModal() {
 function closeGymModal() {
     const modal = document.getElementById('gymModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         document.body.style.overflow = 'auto';
         document.removeEventListener('keydown', handleGymEscapeKey);
     }
@@ -563,7 +571,7 @@ function handleGymEscapeKey(e) {
 function openGreenGeniusModal() {
     const modal = document.getElementById('greenGeniusModal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
         modal.focus();
         document.addEventListener('keydown', handleGreenGeniusEscapeKey);
@@ -573,7 +581,7 @@ function openGreenGeniusModal() {
 function closeGreenGeniusModal() {
     const modal = document.getElementById('greenGeniusModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         document.body.style.overflow = 'auto';
         document.removeEventListener('keydown', handleGreenGeniusEscapeKey);
     }
@@ -589,7 +597,7 @@ function handleGreenGeniusEscapeKey(e) {
 function openGreenGeniusAppModal() {
     const modal = document.getElementById('greenGeniusAppModal');
     if (modal) {
-        modal.style.display = 'block';
+        modal.classList.add('show');
         document.body.style.overflow = 'hidden';
         modal.focus();
         document.addEventListener('keydown', handleGreenGeniusAppEscapeKey);
@@ -599,7 +607,7 @@ function openGreenGeniusAppModal() {
 function closeGreenGeniusAppModal() {
     const modal = document.getElementById('greenGeniusAppModal');
     if (modal) {
-        modal.style.display = 'none';
+        modal.classList.remove('show');
         document.body.style.overflow = 'auto';
         document.removeEventListener('keydown', handleGreenGeniusAppEscapeKey);
     }
