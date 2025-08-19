@@ -1,19 +1,45 @@
-// Function to show certificate image in modal
-function showCertificateImage(certificateName) {
+
+
+// Function to open certificate files in a modal
+function openCertificate(filePath) {
     // Create modal overlay
     const modal = document.createElement('div');
     modal.className = 'certificate-modal';
-    modal.innerHTML = `
-        <div class="certificate-modal-content">
-            <div class="certificate-modal-header">
-                <h3>${certificateName}</h3>
-                <button class="certificate-modal-close">&times;</button>
+    
+    // Determine if it's a PDF or image file
+    const isPDF = filePath.toLowerCase().endsWith('.pdf');
+    const fileName = filePath.split('/').pop();
+    
+    let modalContent;
+    if (isPDF) {
+        // For PDF files, embed the PDF viewer
+        modalContent = `
+            <div class="certificate-modal-content">
+                <div class="certificate-modal-header">
+                    <h3>${fileName}</h3>
+                    <button class="certificate-modal-close">&times;</button>
+                </div>
+                <div class="certificate-modal-body">
+                    <iframe src="${filePath}" width="100%" height="600px" frameborder="0"></iframe>
+                </div>
             </div>
-            <div class="certificate-modal-body">
-                <img src="Certificates/${certificateName}.jpg" alt="${certificateName}" onerror="this.src='Certificates/${certificateName}.png'; this.onerror=null;">
+        `;
+    } else {
+        // For image files, display the image
+        modalContent = `
+            <div class="certificate-modal-content">
+                <div class="certificate-modal-header">
+                    <h3>${fileName}</h3>
+                    <button class="certificate-modal-close">&times;</button>
+                </div>
+                <div class="certificate-modal-body">
+                    <img src="${filePath}" alt="${fileName}" style="max-width: 100%; height: auto;">
+                </div>
             </div>
-        </div>
-    `;
+        `;
+    }
+    
+    modal.innerHTML = modalContent;
     
     // Add modal to page
     document.body.appendChild(modal);
@@ -50,12 +76,6 @@ function showCertificateImage(certificateName) {
     });
 }
 
-// Function to open certificate PDF files (keeping for backup)
-function openCertificate(pdfPath) {
-    // Open the PDF in a new tab
-    window.open(pdfPath, '_blank');
-}
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing...');
@@ -72,6 +92,61 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Animated Background Interactions
+    const hero = document.querySelector('.hero');
+    const floatingShapes = document.querySelectorAll('.floating-shape');
+    const particles = document.querySelectorAll('.particle');
+    
+    if (hero) {
+        // Mouse move effect for floating shapes
+        hero.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const { left, top, width, height } = hero.getBoundingClientRect();
+            
+            // Calculate relative position
+            const x = (clientX - left) / width;
+            const y = (clientY - top) / height;
+            
+            // Apply subtle movement to shapes based on mouse position
+            floatingShapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.5;
+                const moveX = (x - 0.5) * speed * 10;
+                const moveY = (y - 0.5) * speed * 10;
+                
+                shape.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+        
+        // Add hover effects to shapes
+        floatingShapes.forEach(shape => {
+            shape.addEventListener('mouseenter', () => {
+                shape.style.opacity = '0.3';
+                shape.style.transform = 'scale(1.2)';
+            });
+            
+            shape.addEventListener('mouseleave', () => {
+                shape.style.opacity = '0.1';
+                shape.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Parallax effect on scroll for background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * 0.5;
+            
+            floatingShapes.forEach((shape, index) => {
+                const speed = (index + 1) * 0.1;
+                shape.style.transform = `translateY(${rate * speed}px)`;
+            });
+            
+            particles.forEach((particle, index) => {
+                const speed = (index + 1) * 0.05;
+                particle.style.transform = `translateY(${rate * speed}px)`;
+            });
         });
     }
     
@@ -134,10 +209,67 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe elements for scroll reveal
-    const elementsToObserve = document.querySelectorAll('.project-card, .certificate-card, .timeline-item, .skill-category');
+    const elementsToObserve = document.querySelectorAll('.project-card, .certificate-card, .timeline-item, .skill-card');
     elementsToObserve.forEach(el => {
         el.classList.add('scroll-reveal');
         observer.observe(el);
+    });
+    
+    // Skills horizontal scrolling functionality
+    const skillsScrolls = document.querySelectorAll('.skills-scroll');
+    skillsScrolls.forEach(scrollContainer => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        
+        // Mouse events for drag scrolling
+        scrollContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            scrollContainer.style.cursor = 'grabbing';
+            startX = e.pageX - scrollContainer.offsetLeft;
+            scrollLeft = scrollContainer.scrollLeft;
+        });
+        
+        scrollContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+        
+        scrollContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            scrollContainer.style.cursor = 'grab';
+        });
+        
+        scrollContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - scrollContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+            scrollContainer.scrollLeft = scrollLeft - walk;
+        });
+        
+        // Touch events for mobile
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+        
+        scrollContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].pageX;
+            touchScrollLeft = scrollContainer.scrollLeft;
+        });
+        
+        scrollContainer.addEventListener('touchmove', (e) => {
+            if (!touchStartX) return;
+            const touchX = e.touches[0].pageX;
+            const walk = (touchX - touchStartX) * 2;
+            scrollContainer.scrollLeft = touchScrollLeft - walk;
+        });
+        
+        scrollContainer.addEventListener('touchend', () => {
+            touchStartX = 0;
+        });
+        
+        // Add grab cursor
+        scrollContainer.style.cursor = 'grab';
     });
     
     // Form submission handling
